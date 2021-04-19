@@ -37,7 +37,7 @@ public class AutoPowerShotsWithEncoders extends LinearOpMode
     private DcMotor WobbleGoalHeight;
     private Servo LauncherLoadUpper;
 
-    public double DRIVING_VELOCITY_CONSTANT = 537.6;                     //ChANGE THIS AS NECESSARY
+    public double DRIVING_VELOCITY_CONSTANT = 1000;                     //ChANGE THIS AS NECESSARY  ORIGINAL: 537.6
 
     public static Boolean NoRing = false;
     public static Boolean OneRing = false;
@@ -324,20 +324,20 @@ public class AutoPowerShotsWithEncoders extends LinearOpMode
         sleep(50);
     }
     public void Strafe(double power, long time){  //STRAFES LEFT BY DEFAULT                                     ThIS CHANGES A LOT OF TIMES
-        BackRight.setPower(DRIVING_VELOCITY_CONSTANT*0.5);
-        FrontLeft.setPower(DRIVING_VELOCITY_CONSTANT*0.5);
-        FrontRight.setPower(-DRIVING_VELOCITY_CONSTANT*0.5);
-        BackLeft.setPower(-DRIVING_VELOCITY_CONSTANT*0.5);
+        BackRight.setPower(DRIVING_VELOCITY_CONSTANT*0.5*power);
+        FrontLeft.setPower(DRIVING_VELOCITY_CONSTANT*0.5*power);
+        FrontRight.setPower(-DRIVING_VELOCITY_CONSTANT*0.7*power);
+        BackLeft.setPower(-DRIVING_VELOCITY_CONSTANT*0.5*power);
         sleep(time);
         Stop();
         sleep(50);
     }
 
     public void LongStrafe(double power, long time){  //STRAFES LEFT BY DEFAULT                                  //FOR WHEN YOU WANT TO STRAFE FOR A LOOOOOOOOONG TIME
-        BackRight.setPower(DRIVING_VELOCITY_CONSTANT*0.55);
-        FrontLeft.setPower(DRIVING_VELOCITY_CONSTANT*0.55);
-        FrontRight.setPower(-DRIVING_VELOCITY_CONSTANT*0.55);
-        BackLeft.setPower(-DRIVING_VELOCITY_CONSTANT*0.55);
+        BackRight.setPower(DRIVING_VELOCITY_CONSTANT*0.55*power);
+        FrontLeft.setPower(DRIVING_VELOCITY_CONSTANT*0.55*power);
+        FrontRight.setPower(-DRIVING_VELOCITY_CONSTANT*0.69*power);
+        BackLeft.setPower(-DRIVING_VELOCITY_CONSTANT*0.55*power);
         sleep(time);
         Stop();
         sleep(50);

@@ -35,9 +35,9 @@ public class AutoPowerShots extends LinearOpMode
     private Servo WobbleGoalGrabber;
     private DcMotor WobbleGoalHeight;
     private Servo LauncherLoadUpper;
- //   private VoltageSensor vs;
- //   private ColorSensor ColorSensor1;
-   // private ColorSensor ColorSensor2;
+    //   private VoltageSensor vs;
+    //   private ColorSensor ColorSensor1;
+    // private ColorSensor ColorSensor2;
 
     public static Boolean NoRing = false;
     public static Boolean OneRing = false;
@@ -59,9 +59,9 @@ public class AutoPowerShots extends LinearOpMode
         WobbleGoalGrabber = hardwareMap.servo.get("Goal Grabber");
         WobbleGoalHeight = hardwareMap.dcMotor.get("GoalHeight");
         LauncherLoadUpper = hardwareMap.servo.get("LaunchingServo");
-     //   vs = hardwareMap.voltageSensor.get("Voltage Sensor");
-       // ColorSensor1 = hardwareMap.get(ColorSensor.class, "Color Sensor1");
-     //   ColorSensor2 = hardwareMap.get(ColorSensor.class, "Color Sensor2");
+        //   vs = hardwareMap.voltageSensor.get("Voltage Sensor");
+        // ColorSensor1 = hardwareMap.get(ColorSensor.class, "Color Sensor1");
+        //   ColorSensor2 = hardwareMap.get(ColorSensor.class, "Color Sensor2");
 
         FrontLeft.setDirection(DcMotor.Direction.FORWARD);
         FrontRight.setDirection(DcMotor.Direction.REVERSE);
@@ -91,7 +91,7 @@ public class AutoPowerShots extends LinearOpMode
             }
         });
 
-      //  double voltage = vs.getVoltage();
+        //  double voltage = vs.getVoltage();
 
         telemetry.addData("Analysis", pipeline.getAnalysis());
         telemetry.addData("Position", pipeline.position);
@@ -103,7 +103,7 @@ public class AutoPowerShots extends LinearOpMode
 
         while (opModeIsActive())
         { //put functions here for autonomous
-       //     telemetry.addData("Voltage", voltage);
+            //     telemetry.addData("Voltage", voltage);
 
             Grab();
 
@@ -333,7 +333,7 @@ public class AutoPowerShots extends LinearOpMode
     public void Strafe(double power, long time){  //STRAFES LEFT BY DEFAULT                                     ThIS CHANGES A LOT OF TIMES
         BackRight.setPower(power*0.5);
         FrontLeft.setPower(power*0.5);
-        FrontRight.setPower(-power*0.5);
+        FrontRight.setPower(-power*0.7); //Changed from 0.6, it was uneven when testing
         BackLeft.setPower(-power*0.5);
         sleep(time);
         Stop();
@@ -343,7 +343,7 @@ public class AutoPowerShots extends LinearOpMode
     public void LongStrafe(double power, long time){  //STRAFES LEFT BY DEFAULT                                  //FOR WHEN YOU WANT TO STRAFE FOR A LOOOOOOOOONG TIME
         BackRight.setPower(power*0.55);
         FrontLeft.setPower(power*0.55);
-        FrontRight.setPower(-power*0.55);
+        FrontRight.setPower(-power*0.69); //Changed from 0.55, it was uneven when testing
         BackLeft.setPower(-power*0.55);
         sleep(time);
         Stop();
@@ -391,7 +391,7 @@ public class AutoPowerShots extends LinearOpMode
         sleep(500);                                                         //LAUNCHER STUFF
         LauncherLoadUpper.setPosition(0);
     }
-   public void LaunchFirstRing(){
+    public void LaunchFirstRing(){
         Launcher.setPower(.7365);
         LauncherLoadUpper.setPosition(0.3);
         sleep(500);
@@ -480,6 +480,5 @@ public class AutoPowerShots extends LinearOpMode
         }
     }*/
 }
-
 
 

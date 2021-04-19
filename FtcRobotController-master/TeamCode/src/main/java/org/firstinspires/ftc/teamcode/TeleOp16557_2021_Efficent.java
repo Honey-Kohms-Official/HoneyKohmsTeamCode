@@ -13,7 +13,7 @@ import java.util.Arrays;
 import java.util.Timer;
 
 
-@TeleOp(name="16557 TeleOp Version 1.5 (Final Version)", group="Linear Opmode")
+@TeleOp(name="16557 TeleOp Version 1.5 (Efficient Version)", group="Linear Opmode")
 //@Disabled
 public class TeleOp16557_2021_Efficent extends LinearOpMode{
 
